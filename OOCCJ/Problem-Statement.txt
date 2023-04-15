@@ -1,0 +1,5 @@
+(To be finalized by ma'am)
+
+ToDo List
+
+Build a simple ToDo list application that allows users to create and manage tasks. Use classes like Task, ToDoList, and User, with methods for adding, updating, and deleting tasks, as well as marking tasks as completed.

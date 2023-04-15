@@ -1,0 +1,5 @@
+(To be finalized by ma'am)
+
+IoT-based Health Monitoring
+
+Create a wearable device that monitors vital signs, such as heart rate, body temperature, and blood pressure, and sends real-time data to a healthcare provider's dashboard for remote patient monitoring. The device can also send alerts in case of abnormal readings, allowing timely intervention.

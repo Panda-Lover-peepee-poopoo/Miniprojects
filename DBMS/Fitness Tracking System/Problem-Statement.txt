@@ -1,0 +1,16 @@
+(To be finalized by ma'am)
+
+Fitness Tracking System
+
+Problem System:
+1. Develop a fitness tracking system that allows users to create and manage their fitness goals, track their progress over time, and receive personalized workout recommendations.
+
+2. The system should allow users to log information about their workout routines, including exercises performed, sets and reps completed, and amount of weight lifted. The system should also allow users to track their nutrition and water intake to help them reach their fitness goals.
+
+3. In addition, the system should provide users with a dashboard that displays their progress over time, including changes in body weight, muscle mass, and overall fitness levels.
+
+4. To personalize the user experience, the fitness tracking system should allow users to create and manage their fitness goals based on their personal preferences and fitness level.
+
+5. The system should then generate workout recommendations based on the user's goals and preferences, including specific exercises, sets, and reps to perform during each workout session. The system should also allow users to track their progress towards their goals, with the ability to adjust their goals and workout plans as needed.
+
+6. The fitness tracking system should be designed with a user-friendly interface that allows users to easily enter and track their workout and nutrition data, and the system should be scalable to accommodate large volumes of user data. To enhance the user experience, the system should also provide social features, such as the ability to connect with other users, share workout plans and progress, and receive feedback and motivation from the fitness community.
