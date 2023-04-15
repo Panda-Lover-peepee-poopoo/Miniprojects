@@ -51,3 +51,4 @@ void TodoList::display_tasks() const {
             std::cout << std::endl;
         }
     }
+}
