@@ -1,11 +1,10 @@
-#ifndef TODOLIST_H
-#define TODOLIST_H
+#ifndef TODO_LIST_H
+#define TODO_LIST_H
 
-#include <vector>
-#include <string>
 #include "task.h"
+#include <vector>
 
-class ToDoList {
+class TodoList {
 public:
     void add_task(const std::string& description);
     void delete_task(int index);
@@ -18,4 +17,4 @@ private:
     std::vector<Task> tasks;
 };
 
-#endif // TODOLIST_H
+#endif // TODO_LIST_H

@@ -5,10 +5,11 @@
 
 class Task {
 public:
-    Task(const std::string& description);
-    void mark_completed();
-    void mark_uncompleted();
-    std::string toString() const;
+    Task(const std::string& description, bool completed = false);
+    void set_description(const std::string& description);
+    std::string get_description() const;
+    void set_completed(bool completed);
+    bool is_completed() const;
 
 private:
     std::string description;

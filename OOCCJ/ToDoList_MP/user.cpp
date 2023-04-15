@@ -1,6 +1,6 @@
 #include "user.h"
 
-User::User(const std::string& name) : name(name) {}
+User::User() {}
 
 void User::add_task(const std::string& description) {
     myList.add_task(description);

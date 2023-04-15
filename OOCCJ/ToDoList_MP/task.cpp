@@ -1,15 +1,20 @@
 #include "task.h"
 
-Task::Task(const std::string& description) : description(description), completed(false) {}
+Task::Task(const std::string& description, bool completed)
+    : description(description), completed(completed) {}
 
-void Task::mark_completed() {
-    completed = true;
+void Task::set_description(const std::string& description) {
+    this->description = description;
 }
 
-void Task::mark_uncompleted() {
-    completed = false;
+std::string Task::get_description() const {
+    return description;
 }
 
-std::string Task::toString() const {
-    return (completed ? "✓" : "✗") + " " + description;
+void Task::set_completed(bool completed) {
+    this->completed = completed;
+}
+
+bool Task::is_completed() const {
+    return completed;
 }

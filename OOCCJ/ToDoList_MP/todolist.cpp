@@ -1,25 +1,53 @@
 #include "todolist.h"
+#include <iostream>
 
-void ToDoList::add_task(const std::string& description) {
-    tasks.push_back(Task(description));
+void TodoList::add_task(const std::string& description) {
+    Task task(description);
+    tasks.push_back(task);
 }
 
-void ToDoList::delete_task(int index) {
-    tasks.erase(tasks.begin() + index);
+void TodoList::delete_task(int index) {
+    if (index >= 0 && index < tasks.size()) {
+        tasks.erase(tasks.begin() + index);
+    } else {
+        std::cout << "Invalid task index. Please try again." << std::endl;
+    }
 }
 
-void ToDoList::update_task(int index, const std::string& new_description) {
-    tasks[index] = Task(new_description);
+void TodoList::update_task(int index, const std::string& new_description) {
+    if (index >= 0 && index < tasks.size()) {
+        tasks[index].set_description(new_description);
+    } else {
+        std::cout << "Invalid task index. Please try again." << std::endl;
+    }
 }
 
-void ToDoList::mark_task_completed(int index) {
-    tasks[index].mark_completed();
+void TodoList::mark_task_completed(int index) {
+    if (index >= 0 && index < tasks.size()) {
+        tasks[index].set_completed(true);
+    } else {
+        std::cout << "Invalid task index. Please try again." << std::endl;
+    }
 }
 
-void ToDoList::mark_task_uncompleted(int index) {
-    tasks[index].mark_uncompleted();
+void TodoList::mark_task_uncompleted(int index) {
+    if (index >= 0 && index < tasks.size()) {
+        tasks[index].set_completed(false);
+    } else {
+        std::cout << "Invalid task index. Please try again." << std::endl;
+    }
 }
 
-void ToDoList::display_tasks() const {
-    // implementation
-}
+void TodoList::display_tasks() const {
+    if (tasks.empty()) {
+        std::cout << "No tasks in the list." << std::endl;
+    } else {
+        std::cout << "Tasks: " << std::endl;
+        for (int i = 0; i < tasks.size(); i++) {
+            std::cout << "[" << (i + 1) << "] " << tasks[i].get_description();
+            if (tasks[i].is_completed()) {
+                std::cout << " [Completed]";
+            }
+            std::cout << std::endl;
+        }
+    }

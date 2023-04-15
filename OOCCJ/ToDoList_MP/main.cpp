@@ -1,76 +1,68 @@
 #include "user.h"
 #include <iostream>
-
-using namespace std;
+#include <string>
 
 int main() {
-    User user("Chad"); // Create a User object with the name "Chad"
-    
-    int choice;
-    string task_description;
-    
-    do {
-        cout << "==== ToDo List Menu ====" << endl;
-        cout << "1. Add Task" << endl;
-        cout << "2. Mark Task Completed" << endl;
-        cout << "3. Mark Task Uncompleted" << endl;
-        cout << "4. Update Task Description" << endl;
-        cout << "5. Display Tasks" << endl;
-        cout << "6. Exit" << endl;
-        cout << "Enter your choice: ";
-        cin >> choice;
-        
+    User user;
+
+    std::string description;
+    int index;
+    int choice = 0;
+
+    while (choice != 7) {
+        std::cout << "Todo List Menu" << std::endl;
+        std::cout << "1. Add Task" << std::endl;
+        std::cout << "2. Delete Task" << std::endl;
+        std::cout << "3. Update Task" << std::endl;
+        std::cout << "4. Mark Task Completed" << std::endl;
+        std::cout << "5. Mark Task Uncompleted" << std::endl;
+        std::cout << "6. Display Tasks" << std::endl;
+        std::cout << "7. Quit" << std::endl;
+        std::cout << "Enter your choice: ";
+        std::cin >> choice;
+
         switch (choice) {
-            case 1: {
-                cout << "Enter task description: ";
-                cin.ignore();
-                getline(cin, task_description);
-                user.add_task(task_description);
-                cout << "Task added successfully!" << endl;
+            case 1:
+                std::cout << "Enter task description: ";
+                std::cin.ignore();
+                std::getline(std::cin, description);
+                user.add_task(description);
+                std::cout << "Task added successfully!" << std::endl;
                 break;
-            }
-            case 2: {
-                int index;
-                cout << "Enter index of task to mark completed: ";
-                cin >> index;
-                user.mark_task_completed(index);
-                cout << "Task marked as completed!" << endl;
+            case 2:
+                std::cout << "Enter task index: ";
+                std::cin >> index;
+                user.delete_task(index - 1);
                 break;
-            }
-            case 3: {
-                int index;
-                cout << "Enter index of task to mark uncompleted: ";
-                cin >> index;
-                user.mark_task_uncompleted(index);
-                cout << "Task marked as uncompleted!" << endl;
+            case 3:
+                std::cout << "Enter task index: ";
+                std::cin >> index;
+                std::cout << "Enter new task description: ";
+                std::cin.ignore();
+                std::getline(std::cin, description);
+                user.update_task(index - 1, description);
                 break;
-            }
-            case 4: {
-                int index;
-                string new_description;
-                cout << "Enter index of task to update: ";
-                cin >> index;
-                cout << "Enter new task description: ";
-                cin.ignore();
-                getline(cin, new_description);
-                user.update_task(index, new_description);
-                cout << "Task description updated!" << endl;
+            case 4:
+                std::cout << "Enter task index: ";
+                std::cin >> index;
+                user.mark_task_completed(index - 1);
                 break;
-            }
-            case 5: {
+            case 5:
+                std::cout << "Enter task index: ";
+                std::cin >> index;
+                user.mark_task_uncompleted(index - 1);
+                break;
+            case 6:
                 user.display_tasks();
                 break;
-            }
-            case 6: {
-                cout << "Goodbye!" << endl;
+            case 7:
+                std::cout << "Goodbye!" << std::endl;
                 break;
-            }
-            default: {
-                cout << "Invalid choice. Please try again." << endl;
+            default:
+                std::cout << "Invalid choice. Please try again." << std::endl;
                 break;
-            }
         }
-    } while (choice != 6);
-    
+    }
+
     return 0;
 }
